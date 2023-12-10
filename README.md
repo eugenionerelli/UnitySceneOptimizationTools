@@ -45,3 +45,32 @@ The `ReplaceSillas.cs` script searches the entire Unity scene for GameObjects wi
 1. Copy and paste the script into a new C# file in your Unity project. Save it and let Unity compile it.
 2. Click on the menu item `Custom/Replace Sillas` in the Unity Editor.
 3. The script will search the entire scene for GameObjects matching the regex pattern and combine their children's meshes accordingly.
+
+## Script 4: Replace GameObjects with Selected Models
+
+### Description
+The `Replace_GUI.cs` script provides a GUI in the Unity Editor to replace GameObjects matching specific regex patterns with selected prefab models. Users can add multiple regex-pattern-model pairs, which allows for varied and complex replacement criteria. The changes are performed immediately in the scene, and the original GameObject's transform is preserved.
+
+### Prerequisites
+- Models intended for replacement must be available in the Unity project's `Assets` folder.
+
+### Usage
+1. Copy and paste the script into a new C# file within the `Assets/Editor` directory in your Unity project. Save the script and let Unity compile it.
+2. Open the custom GUI window by navigating to `Window/Replace GameObjects` in the Unity Editor.
+3. Use the GUI to:
+   - Add new regex-pattern-model pairs for replacement.
+   - Select models for each regex pattern from the project assets.
+   - Remove regular expression replacements with the "X" button
+   - Execute the replacements by clicking the "Execute" button.
+   - Reset the GUI fields to their default state by clicking the "Reset" button.
+
+### Notes
+- The "Execute" button will start the replacement process, iterating through all GameObjects in the current scene and replacing those that match the regex patterns.
+- The "Reset" button will clear all input fields and selections, allowing the user to start fresh.
+
+### Useful regular expressions for Theatre replacements
+For "Globe" Theater
+- `^Chair#2\s*[\d\w#]*$`
+- `^Chair#1\s*[\d\w#]*$`  
+**For Olivera Theatre**
+- `^Silla2\s*[\d\w#]*$`
